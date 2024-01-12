@@ -1,5 +1,5 @@
-# Creates a MutableState object, which holds a value that can be changed.
- ## Its initial value is set to 1.
+### Creates a MutableState object, which holds a value that can be changed.
+ ### Its initial value is set to 1.
 
 
 ````
