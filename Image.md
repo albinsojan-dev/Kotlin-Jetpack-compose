@@ -28,3 +28,32 @@ If result doesn't match any of the specified cases (meaning it's not 1 through 5
             else -> R.drawable.dice_6
         }
 ````
+### Click to image
+
+````
+ var result by remember { mutableStateOf(1) }
+
+
+ when (imageShow) {
+
+            1 -> {
+                Image(
+                    painter = painterResource(R.drawable.lemon_tree),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .clickable {
+                            imageShow = 2
+                        }
+                )
+            }
+
+            2 -> {
+                Image(painter = painterResource(id = R.drawable.lemon_squeeze),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .clickable {
+                            imageShow = 1
+                        }
+                )
+            }
+````
