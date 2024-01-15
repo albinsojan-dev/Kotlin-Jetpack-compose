@@ -27,3 +27,18 @@ for example
             }
         }
     }
+````
+### Center
+
+````
+
+ Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxSize()
+            .wrapContentSize(Alignment.Center)
+    ){
+
+    write the code here
+
+}
