@@ -42,3 +42,33 @@ for example
     write the code here
 
 }
+````
+### click
+
+````
+ when (imageShow) {
+
+            1 -> {
+                Image(
+                    painter = painterResource(R.drawable.lemon_tree),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .clickable {
+                            imageShow = 2
+                        }
+                )
+                Text(text = stringResource(R.string.Lemon_tree))
+            }
+
+            2 -> {
+                Image(painter = painterResource(id = R.drawable.lemon_squeeze),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .clickable {
+                            imageShow = 1
+                        }
+                )
+                Text(text = stringResource(id = R.string.lemon_squeeze))
+            }
+````
+
