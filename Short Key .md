@@ -46,6 +46,9 @@ for example
 ### click
 
 ````
+ var result by remember { mutableStateOf(1) }
+
+
  when (imageShow) {
 
             1 -> {
