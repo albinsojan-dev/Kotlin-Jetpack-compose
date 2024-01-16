@@ -32,5 +32,13 @@
         )
         )
 ````
+### Text Down specs
+
+````
+Text(text = stringResource(R.string.tip_amount,"$0.00"),
+           style = MaterialTheme.typography.displaySmall
+           )
+       
+          Spacer(modifier = Modifier.height(150.dp) )
 
 
