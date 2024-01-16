@@ -28,9 +28,15 @@ fun TipTime(){
        horizontalAlignment = Alignment.CenterHorizontally,
        verticalArrangement = Arrangement.Center
    ) {
+      Text(
+        text = stringResource(R.string.calculate_tip),
+           modifier = Modifier
+               .padding(bottom = 16.dp, top = 40.dp)
+               .align(alignment = Alignment.Start)
+       )
       EditNumberField(
-         value = amountInput,
-           onValueChange = {amountInput = it},
+         value = amountInput, // get the value
+           onValueChange = {amountInput = it}, // show the value in textBox
            modifier = Modifier
            .padding(bottom = 32.dp)
      )
