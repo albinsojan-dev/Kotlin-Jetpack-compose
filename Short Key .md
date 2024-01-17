@@ -43,7 +43,7 @@ for example
 
 }
 ````
-### click
+### click Image
 
 ````
  var result by remember { mutableStateOf(1) }
@@ -74,4 +74,11 @@ for example
                 Text(text = stringResource(id = R.string.lemon_squeeze))
             }
 ````
+###  Conversion to decimal number
+
+````
+ val amount = amountInput.toDoubleOrNull()?:0.0
+````
+val amount =: This declares a new variable named amount and assigns it a value.
+amountInput.toDoubleOrNull(): This part attempts to convert the value of the variable amountInput to a Double (a decimal number type). If the conversion is successful, it returns a Double value. If the conversion fails (e.g., because amountInput isn't a valid number), it returns null.
 
