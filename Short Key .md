@@ -89,3 +89,15 @@ val invalidInput = "hello"  // This is not a valid number string \
 val amount2 = invalidInput.toDoubleOrNull() ?: 0.0 \
 // amount2 will now be 0.0
 
+
+### Numerical value to format
+
+````
+   NumberFormat.getCurrencyInstance().format("value")
+````
+Example
+
+double price = 12.99;  // Numerical value to format \
+String formattedPrice = NumberFormat.getCurrencyInstance().format(price); \
+// This would likely output "$12.99" (in the US locale) or "£12.99" (in the UK locale)
+
