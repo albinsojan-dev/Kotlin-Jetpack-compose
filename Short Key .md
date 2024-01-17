@@ -80,5 +80,10 @@ for example
  val amount = amountInput.toDoubleOrNull()?:0.0
 ````
 val amount =: This declares a new variable named amount and assigns it a value.
+
 amountInput.toDoubleOrNull(): This part attempts to convert the value of the variable amountInput to a Double (a decimal number type). If the conversion is successful, it returns a Double value. If the conversion fails (e.g., because amountInput isn't a valid number), it returns null.
+
+?:: This is the Elvis operator. It's a shorthand way of saying "if the expression on the left-hand side is not null, use its value; otherwise, use the value on the right-hand side."
+
+0.0: This is the default value that will be used if amountInput.toDoubleOrNull() returns null.
 
