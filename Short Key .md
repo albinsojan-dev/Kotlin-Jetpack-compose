@@ -79,11 +79,13 @@ for example
 ````
  val amount = amountInput.toDoubleOrNull()?:0.0
 ````
-val amount =: This declares a new variable named amount and assigns it a value.
+Example
 
-amountInput.toDoubleOrNull(): This part attempts to convert the value of the variable amountInput to a Double (a decimal number type). If the conversion is successful, it returns a Double value. If the conversion fails (e.g., because amountInput isn't a valid number), it returns null.
+val amountInput = "12.34"  // This is a valid number string \
+val amount = amountInput.toDoubleOrNull() ?: 0.0 \
+// amount will now be 12.34 
 
-?:: This is the Elvis operator. It's a shorthand way of saying "if the expression on the left-hand side is not null, use its value; otherwise, use the value on the right-hand side."
-
-0.0: This is the default value that will be used if amountInput.toDoubleOrNull() returns null.
+val invalidInput = "hello"  // This is not a valid number string \
+val amount2 = invalidInput.toDoubleOrNull() ?: 0.0 \
+// amount2 will now be 0.0
 
