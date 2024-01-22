@@ -40,5 +40,11 @@ Text(text = stringResource(R.string.tip_amount,"$0.00"),
            )
        
           Spacer(modifier = Modifier.height(150.dp) )
+````
+### show to user output with Text 
+tip is the Text
+````
+Text(text = stringResource(R.string.tip_amount,tip),
 
+`````
 
