@@ -78,5 +78,35 @@ EditNumberField(
                 .padding(bottom = 32.dp)
                 .fillMaxWidth()
 )
+````
+### Add KeyBoard to TextField 
 
+````
+@Composable
+fun EditNumberField(
+ keyboardOptions: KeyboardOptions,
+ ){
+ TextField(
+  keyboardOptions = keyboardOptions
+  )
+  }
+  ````
+ It display the number keyboard and next Button
 
+````
+  EditNumberField(
+   keyboardOptions = KeyboardOptions.Default.copy(
+                keyboardType = KeyboardType.Number,
+                imeAction = ImeAction.Next),
+                )
+ ````
+  It display the Number keyboard and Done Button
+
+````
+EditNumberField(
+ keyboardOptions = KeyboardOptions.Default.copy(
+                keyboardType = KeyboardType.Number,
+                imeAction = ImeAction.Done),
+)
+
+````
