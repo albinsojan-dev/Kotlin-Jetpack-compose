@@ -42,3 +42,41 @@ fun TipTime(){
      )
    }
 }
+````
+### Add two TextField
+````
+fun EditNumberField(
+   @StringRes labelType: Int,
+    value: String,
+    onValueChanged: (String) -> Unit,
+    modifier: Modifier
+) {
+    TextField(
+        value = value,
+        singleLine = true,
+        modifier = modifier,
+        onValueChange = onValueChanged,
+        label = { Text(text = stringResource(labelType))},
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+    )
+}
+````
+````
+EditNumberField(
+            labelType = R.string.bill_amount,
+            value = amountInput,
+            onValueChanged = { amountInput = it },
+            modifier = Modifier
+                .padding(bottom = 32.dp)
+                .fillMaxWidth()
+        )
+        EditNumberField(
+            labelType = R.string.how_was_the_service,
+            value = TipInput,
+            onValueChanged = {TipInput = it},
+            modifier = Modifier
+                .padding(bottom = 32.dp)
+                .fillMaxWidth()
+)
+
+
