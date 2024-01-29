@@ -101,3 +101,11 @@ double price = 12.99;  // Numerical value to format \
 String formattedPrice = NumberFormat.getCurrencyInstance().format(price); \
 // This would likely output "$12.99" (in the US locale) or "£12.99" (in the UK locale)
 
+### rounds the given value of an integer
+
+````
+ if (roundUp){
+        tip = kotlin.math.ceil(tip)
+    }
+````
+Note: The kotlin.math.ceil(x) function rounds the given value of an integer up. For example, it rounds 10.65 to 11.00. This function can take a Double or a Float number.
