@@ -10,3 +10,9 @@
     ) {
         //...
     }
+````
+Import the following:
+
+````
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
