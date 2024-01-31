@@ -1,6 +1,9 @@
 ### Switch
 
 ````
+var roundUp by remember { mutableStateOf(false) }
+````
+````
 @Composable
 fun RoundTheTipRow(
     roundUp:Boolean,
