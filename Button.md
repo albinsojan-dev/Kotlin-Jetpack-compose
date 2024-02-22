@@ -110,3 +110,14 @@ fun ShowImage(modifier: Modifier = Modifier) {
 
     }
 }
+````
+### Button Click to go Next Activity 
+````
+     Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext,MainActivity::class.java))
+             }
+        ) {
+            Text(text = stringResource(R.string.go_to_main_activity))
+        }
+````
