@@ -113,6 +113,8 @@ fun ShowImage(modifier: Modifier = Modifier) {
 ````
 ### Button Click to go Next Activity 
 ````
+ val mContext = LocalContext.current
+
      Button(
             onClick = {
                 mContext.startActivity(Intent(mContext,MainActivity::class.java))
