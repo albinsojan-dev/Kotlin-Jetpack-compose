@@ -108,5 +108,10 @@ EditNumberField(
                 keyboardType = KeyboardType.Number,
                 imeAction = ImeAction.Done),
 )
-
+````
+Password show dot
+````
+ TextField(
+visualTransformation = PasswordVisualTransformation(),
+)
 ````
