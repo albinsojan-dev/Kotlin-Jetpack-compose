@@ -83,4 +83,98 @@ val encodedTitle = Uri.encode(note.title)
    navController.navigate("edit_note/${note.id}/$encodedTitle/$encodedContent")
      }
 ````
+Button cliked pass a value and go to next page 
+````
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            val navController = rememberNavController()
+            AppNavHost(navController)
+        }
+    }
+}
+
+@Composable
+fun AppNavHost(navController: NavHostController) {
+    NavHost(navController, startDestination = "screenA") {
+        composable("screenA") {
+            FirstPage(navController)
+        }
+        composable("screenB/{message}") { backStackEntry ->
+            val message = backStackEntry.arguments?.getString("message") ?: ""
+            ScreenB(message)
+        }
+    }
+}
+
+@Composable
+fun FirstPage(navController: NavHostController) {
+    var name by remember { mutableStateOf("") }
+
+    Column(
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = 56.dp)
+    ) {
+        Text(
+            text = "First Page",
+            fontSize = 24.sp,
+            color = Color.Blue,
+            modifier = Modifier.padding(horizontal = 66.dp)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        TextField(
+            value = name,
+            onValueChange = { name = it },
+            label = { Text("Enter Name") }
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(
+            onClick = {
+                val encodedMessage = URLEncoder.encode(name, StandardCharsets.UTF_8.toString())
+                navController.navigate("screenB/$encodedMessage")
+            }
+        ) {
+            Text(
+                "Go to Second Page",
+                color = Color.Black,
+                modifier = Modifier.padding(horizontal = 2.dp)
+            )
+        }
+    }
+}
+
+````
+````
+@Composable
+fun ScreenB(message: String) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = 66.dp)
+    ) {
+        Text(
+            text = "Second Page",
+            fontSize = 24.sp,
+            color = Color.Blue
+        )
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
+        Text(
+            text = "Your name : $message",
+            fontSize = 18.sp
+        )
+    }
+}
+     ````   
  
